@@ -1,17 +1,1 @@
-alert('Hello world');
-
-let favoriteFood = 'Pizza';
-document.write(favoriteFood);
-
-// let myName = 'Bob';
-// document.write(myName);
-// myName = 'John Doe';
-// document.write(myName);
-
-// let simpleAddition = 2 + 2;
-// document.write(simpleAddition);
-
-// let size = 100;
-// let doubleSize = size * 2;
-// let minSize = (doubleSize * 2) - (size / 2);
-// document.write(minSize);
+let pokemonList = [{name: 'Bulbasaur', height: 7, type: ['grass', 'poison']},{name: 'Charmander', height: 6, type: 'fire'},{name: 'Pidgey', height: 3, type:['flying', 'normal']}]
