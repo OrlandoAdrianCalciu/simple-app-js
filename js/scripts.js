@@ -1,23 +1,6 @@
-// alert('Hello world!')
 
-
-// for (let i = 1; i <= 100; i++) {
-//     console.log(i);
-// }
-
-// let day = "Friday"
-
-// if(day === "Sunday"){
-//     console.log("YEEY! It's Sunday")
-// } else if(day === "Saturday"){
-//     console.log("Still weekend!!")
-// } else{
-//     console.log("Oh no!")
-// }
-
-
-// let favoriteFood = 'Pizza'
-// document.write(favoriteFood)
+//FOREACH LOOPS
+let pokemonRepository = (function(){
 
 let pokemonList = [
     { name: 'Bulbasaur', height: 70, type: ['grass', 'poison'] },
@@ -27,15 +10,52 @@ let pokemonList = [
     { name: 'Ekans', height: 200, type: ['poison'] },
 ]
 
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write("<br>" + pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")")
+pokemonList.forEach(function(pokemon){
+    console.log(pokemon);
+});
 
-    if (pokemonList[i].height >= 100) {
-        document.write(" - Wow, that's big!")
-    }
-    else if (pokemonList[i].height >= 50) {
-        document.write(" - That is avarage!")
-    } else {
-        document.write(" - That's so tiny!")
-    }
+function getAll(){
+    return pokemonList;
 }
+
+function add(){
+    pokemonList.push(pokemon)
+}
+
+return{
+    getAll:getAll,
+    add:add
+}
+
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon){
+    if(pokemon.height >= 100){
+        document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - Wow, that's big!")
+    } else if(pokemon.height >= 50){
+        document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - That is avarage!")
+    } else{
+        document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - That's so tiny!")
+    }
+});
+
+
+
+// FOR LOOPS
+// function printArrayDetails(){
+//     for (let i = 0; i < pokemonList.length; i++) {
+//         document.write("<br>" + pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")")
+
+//         if (pokemonList[i].height >= 100) {
+//             document.write(" - Wow, that's big!")
+//         }
+//         else if (pokemonList[i].height >= 50) {
+//             document.write(" - That is avarage!")
+//         } else {
+//             document.write(" - That's so tiny!")
+//         }
+//     }
+// }
+
+// printArrayDetails();
+
