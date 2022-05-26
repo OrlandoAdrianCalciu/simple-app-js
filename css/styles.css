@@ -1,8 +1,15 @@
-.pokemon-list{
-    list-style-type: none;
+body {
+    font-family: 'Oswald', sans-serif;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 25%, rgba(0, 0, 0, 1) 29%, rgba(255, 0, 0, 1) 36%);
 }
 
-.button-class{
+.pokemon-list {
+    list-style-type: none;
+    display: grid;
+    text-align: center;
+}
+
+.button-class {
     border: 5px solid #0A285F;
     border-radius: 5px;
     background-color: #0075BE;
@@ -13,10 +20,98 @@
     display: inline-block;
     text-decoration: none;
     text-align: center;
+    text-transform: capitalize;
+    width: 20%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
 }
 
-.button-class:hover, .button-class:focus{
+.button-class:hover,
+.button-class:focus {
     transform: translateY(-3px);
-    background-color:  #0075BE;
+    background-color: #0075BE;
     color: #D5A100;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Blaka';
+    font-size: 100px;
+    color: #FFCC00;
+    text-shadow: 3px 5px 10px #D5A100, 0 0 1em #0075be, 0 0 1em #0A285F;
+    width: 100%;
+}
+
+.pokemon-img {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+#modal-container {
+    display: none;
+}
+
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3B4CCA20;
+    /* to show it above other content */
+    z-index: 999;
+    overflow: auto;
+    display: grid;
+    text-align: center;
+}
+
+.modal {
+    text-transform: capitalize;
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    border: 5px solid #0075be;
+}
+
+.modal-close {
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.modal p {
+    margin-bottom: 0;
+}
+
+@media all and (max-width: 500px) {
+    .button-class {
+        width: 50%;
+    }
+
+    h1: {
+        font-size: 1rem;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .button-class {
+        width: 50%;
+    }
 }
