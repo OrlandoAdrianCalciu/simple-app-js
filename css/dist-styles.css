@@ -1,1 +1,65 @@
-body{font-family:Oswald,sans-serif;background:radial-gradient(circle,#fff 25%,#000 29%,red 36%)}.pokemon-list{list-style-type:none;display:grid;text-align:center}.button-class{border:5px solid #0a285f;border-radius:5px;background-color:#0075be;color:#fc0;margin-bottom:20px;padding:5px;cursor:pointer;display:inline-block;text-decoration:none;text-align:center;text-transform:capitalize;width:20%;font-family:Oswald,sans-serif;font-size:20px}.button-class:focus,.button-class:hover{transform:translateY(-3px);background-color:#0075be;color:#d5a100}a{font-family:Blaka;font-size:100px;color:#fc0;text-shadow:3px 5px 10px #d5a100,0 0 40px #0075be,0 0 40px #0a285f;width:auto}.pokemon-img{image-resolution:300dpi;display:block;margin:0 auto;width:50%}@media all and (max-width:500px){.button-class{width:50%}h1:{font-size:1rem}}@media all and (min-width:500px) and (max-width:750px){.button-class{width:50%}}
+body {
+    font-family: Oswald, sans-serif;
+    background: radial-gradient(circle, #fff 25%, #000 29%, red 36%)
+}
+
+.pokemon-list {
+    list-style-type: none;
+    display: grid;
+    text-align: center
+}
+
+.button-class {
+    border: 5px solid #0a285f;
+    border-radius: 5px;
+    background-color: #0075be;
+    color: #fc0;
+    margin-bottom: 20px;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+    width: 50%;
+    font-family: Oswald, sans-serif;
+    font-size: 20px
+}
+
+.button-class:focus,
+.button-class:hover {
+    transform: translateY(-3px);
+    background-color: #0075be;
+    color: #d5a100
+}
+
+a {
+    font-family: Blaka;
+    font-size: 100px;
+    color: #fc0;
+    text-shadow: 3px 5px 10px #d5a100, 0 0 40px #0075be, 0 0 40px #0a285f;
+    width: auto
+}
+
+.pokemon-img {
+    image-resolution: 300dpi;
+    display: block;
+    margin: 0 auto;
+    width: 50%
+}
+
+@media all and (max-width:500px) {
+    .button-class {
+        width: 50%
+    }
+
+    h1: {
+        font-size: 1rem
+    }
+}
+
+@media all and (min-width:500px) and (max-width:750px) {
+    .button-class {
+        width: 50%
+    }
+}
