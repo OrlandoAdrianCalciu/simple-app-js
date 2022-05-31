@@ -2,18 +2,12 @@
 //FOREACH LOOPS
 let pokemonRepository = (function () {
     let pokemonList = [
-        // { name: 'Bulbasaur', height: 70, type: ['grass', 'poison'] },
-        // { name: 'Charmander', height: 60, type: 'fire' },
-        // { name: 'Pidgey', height: 30, type: ['flying', 'normal'] },
-        // { name: 'Onix', height: 880, type: ['rock', 'ground'] },
-        // { name: 'Ekans', height: 200, type: ['poison'] },
     ];
     let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
     let modalContainer = document.querySelector('#modal-container');
+    let input = $('input');
+    input.on('input', filterList)
 
-    // pokemonList.forEach(function (pokemon) {
-    //     console.log(pokemon);
-    // });
 
 
     function add(pokemon) {
@@ -33,12 +27,11 @@ let pokemonRepository = (function () {
         let list = document.querySelector(".pokemon-list");
 
         let listItem = document.createElement("li");
-        listItem.classList.add("col-6", "mx-auto");
+        listItem.classList.add("col-xs-8","col-sm-8", "col-8", "mx-auto");
 
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        // button.classList.add("button-class");
-        button.classList.add("btn", "btn-outline-primary", "btn-lg", "btn-block", "text-capitalize")
+        button.classList.add("btn", "button-class", "btn-outline-primary", "btn-lg", "btn-block", "text-capitalize")
 
         listItem.appendChild(button);
         button.setAttribute('data-toggle', 'modal');
@@ -69,12 +62,15 @@ let pokemonRepository = (function () {
         let pokemonName = $(`<h5 class="text-uppercase">${pokemon.name}</h5>`);
         let pokemonImg = $(`<img class="rounded mx-auto d-block w-50 p-3" src='${pokemon.imageUrl}' alt="Picture of the Pokemon ${pokemon.name}">`);
         let pokemonHeight = $(`<p class="ml-4 mt-3 mb-0">Height: ${pokemon.height}</p>'`);
+        let pokemonWeight = $(`<p class= ml-4 mb-0>Weight: ${pokemon.weight}</p>`);
+        let pokemonTypes = $(`<p class = ml-4 mb-0>Types: ${pokemon.types}</p>`)
 
 
 
         modalTitle.append(pokemonName);
         modalBody.append(pokemonImg);
         modalBody.append(pokemonHeight);
+        modalBody.append(pokemonWeight)
 
 
     }
@@ -100,6 +96,21 @@ let pokemonRepository = (function () {
         });
     }
 
+    function filterList() {
+        let inputValue = $('input').val();
+        let list = $('li');
+        list.each(function () {
+          let item = $(this);
+          let name = item.text();
+          if (name.startsWith(inputValue)) {
+            item.show();
+          } else {
+            item.hide();
+          }
+        });
+      }
+
+
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -107,7 +118,7 @@ let pokemonRepository = (function () {
         }).then(function (details) {
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
-            item.types = details.types;
+            item.weight = details.weight;
         }).catch(function (e) {
             console.error(e);
         });
@@ -132,7 +143,8 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,
-        showDetails: showDetails
+        showDetails: showDetails,
+        filterList: filterList
     }
 
 })();
@@ -142,33 +154,9 @@ pokemonRepository.loadList().then(function () {
 
         pokemonRepository.addListItem(pokemon);
 
-        //     if(pokemon.height >= 100){
-        //         document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - Wow, that's big!")
-        //     } else if(pokemon.height >= 50){
-        //         document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - That is avarage!")
-        //     } else{
-        //         document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "cm" + ")" + " - That's so tiny!")
-        //     }
+
     });
 });
 
 
-
-// FOR LOOPS
-// function printArrayDetails(){
-//     for (let i = 0; i < pokemonList.length; i++) {
-//         document.write("<br>" + pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")")
-
-//         if (pokemonList[i].height >= 100) {
-//             document.write(" - Wow, that's big!")
-//         }
-//         else if (pokemonList[i].height >= 50) {
-//             document.write(" - That is avarage!")
-//         } else {
-//             document.write(" - That's so tiny!")
-//         }
-//     }
-// }
-
-// printArrayDetails();
 
