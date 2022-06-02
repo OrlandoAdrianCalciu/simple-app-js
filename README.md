@@ -3,7 +3,7 @@
 
 ## Description
 
-This is a Pokemondex App that uses an external [API]('https://pokeapi.co/'). When a Pokemon is been clicked, the image and the height of the Pokemon will appear.
+This is a Pokemondex App that uses an external [API]('https://pokeapi.co/'). When a Pokemon is been clicked, the image, the height and the weight of the Pokemon will appear.
 
 ## Languages
 
