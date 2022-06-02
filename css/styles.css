@@ -1,6 +1,9 @@
 body{
     font-family: 'Oswald', sans-serif;
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 25%, rgba(0, 0, 0, 1) 29%, rgba(255, 0, 0, 1) 36%);
+    height: 100%;
+    background-attachment: fixed;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 1) 25%, rgba(0, 0, 0, 1) 29%, rgba(255, 0, 0, 1) 
+    36%);
 }
 
 .pokemon-list {
